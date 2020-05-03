@@ -21,7 +21,15 @@ public class Product {
     @Column(nullable = false)
 	private String productType;
     
-    @Column(nullable = false)
+    public long getId() {
+		return id;
+	}
+
+//	public void setId(long id) {
+//		this.id = id;
+//	}
+
+	@Column(nullable = false)
 	private long productStock;
     
     @Column(nullable = false)

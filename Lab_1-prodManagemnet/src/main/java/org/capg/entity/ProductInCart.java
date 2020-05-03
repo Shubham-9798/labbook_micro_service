@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "ProductCart_tbl")
-public class ProductCart {
+public class ProductInCart {
 	
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,25 +17,42 @@ public class ProductCart {
     
     @Column(nullable = false)
 	private long productId;
+    @Column(nullable = false)
+	private long quantity;
+    @Column(nullable = false)
+	private String type;
     
     
-	public ProductCart() {
+	public long getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(long quantity) {
+		this.quantity = quantity;
+	}
+	public ProductInCart() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public ProductCart(long id, long productId) {
+	
+	public ProductInCart(long productId, long quantity, String type) {
 		super();
-		this.id = id;
 		this.productId = productId;
+		this.quantity = quantity;
+		this.type = type;
 	}
 	
-	
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 	public long getId() {
 		return id;
 	}
-	public void setId(long id) {
-		this.id = id;
-	}
+//	public void setId(long id) {
+//		this.id = id;
+//	}
 	public long getProductId() {
 		return productId;
 	}

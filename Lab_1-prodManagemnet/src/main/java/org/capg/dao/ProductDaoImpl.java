@@ -10,6 +10,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 import org.capg.entity.Product;
+import org.capg.entity.ProductInCart;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -58,6 +59,14 @@ public class ProductDaoImpl implements IProductDao {
 		.getResultList();
 		
 		return products;
+	}
+	
+	public ProductInCart addToCart(ProductInCart product) {
+//		long productId = product.getProductId();
+//		long quantity = product.getQuantity();
+		
+		return entityManager.merge(product);
+
 	}
 	
 	

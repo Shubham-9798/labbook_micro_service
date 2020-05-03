@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.capg.dao.IProductDao;
 import org.capg.entity.Product;
+import org.capg.entity.ProductInCart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -36,6 +37,10 @@ public class ProductManagServiceImpl implements IProductManagService {
 	
 	public List<Product> fetchProductByType(String type) {
 		return productDao.fetchProductByType(type);
+	}
+	
+	public ProductInCart addToCart(ProductInCart product) {
+		return productDao.addToCart(product);
 	}
 	
 	
