@@ -1,0 +1,19 @@
+# Eclipse
+.classpath
+.project
+.settings/
+ *.zip
+# Intellij
+.idea/
+*.iml
+*.iws
+ *.zip
+bin
+
+# Mac
+.DS_Store
+ 
+# Maven
+log/
+target/
+*.log
